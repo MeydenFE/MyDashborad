@@ -5,6 +5,12 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-main: #2573B8;
+  --color-sub: #4F46E5;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -18,8 +24,8 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+@layer base {
+  body {
+    @apply text-foreground bg-[var(--background)] font-sans;
+  }
 }
