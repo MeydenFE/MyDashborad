@@ -1,9 +1,11 @@
-import Dream from "@/src/app/_components/dream/Dream";
+import DreamJourney from "@/src/app/_components/dream_journey/DreamJourney";
+import DreamTitle from "@/src/app/_components/dream_title/DreamTitle";
 
 const TopPage = () => {
   return (
     <main>
-      <Dream />
+      <DreamTitle />
+      <DreamJourney />
     </main>
   );
 };

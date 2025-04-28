@@ -11,6 +11,7 @@ type SectionProps = {
   description?: string;
   children: React.ReactNode;
   titleSx?: string;
+  descriptionSx?: string;
   width?: string;
 };
 
@@ -20,14 +21,22 @@ export const Section = ({
   description,
   children,
   titleSx,
+  descriptionSx,
   width = "100%",
 }: SectionProps) => {
   return (
     <Card style={{ width }}>
       <CardHeader>
         {title && <CardTitle className={titleSx}>{title}</CardTitle>}
-        {description && <CardDescription>{description}</CardDescription>}
+        {description && (
+          <CardDescription
+            className={`text-sm text-main ${descriptionSx ?? ""}`}
+          >
+            {description}
+          </CardDescription>
+        )}
       </CardHeader>
+
       <CardContent>{children}</CardContent>
     </Card>
   );
