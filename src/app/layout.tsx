@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header/Header";
 
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
+// FontはNunitoを使用するため、NotoSansはコメントアウト
+// const notoSans = Noto_Sans({
+//   variable: "--font-noto-sans",
+//   subsets: ["latin"],
+//   weight: ["400", "700"],
+//   display: "swap",
+// });
+
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
@@ -22,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${notoSans.variable} antialiased`}>
+      <body
+        className={`${nunito.variable} flex flex-col min-h-screen antialiased`}
+      >
         <Header />
         {children}
       </body>
