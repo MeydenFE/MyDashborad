@@ -1,5 +1,11 @@
+import Dream from "@/src/app/_components/dream/Dream";
+
 const TopPage = () => {
-  return <main className="flex-1"></main>;
+  return (
+    <main>
+      <Dream />
+    </main>
+  );
 };
 
 export default TopPage;

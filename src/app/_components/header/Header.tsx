@@ -1,5 +1,5 @@
-import HeaderLogo from "@/src/components/header/HeaderLogo";
-import UserIcon from "@/src/components/header/UserIcon";
+import HeaderLogo from "@/src/app/_components/header/HeaderLogo";
+import HeaderUserIcon from "@/src/app/_components/header/UserIcon";
 
 /** 共通ヘッダー部分 */
 
@@ -9,7 +9,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16">
         <div className="flex w-full items-center justify-between">
           <HeaderLogo />
-          <UserIcon />
+          <HeaderUserIcon />
         </div>
       </div>
     </header>

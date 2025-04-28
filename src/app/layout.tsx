@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Header from "../components/header/Header";
+import Header from "@/src/app/_components/header/Header";
 
 // FontはNunitoを使用するため、NotoSansはコメントアウト
 // const notoSans = Noto_Sans({
@@ -19,8 +19,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Dashboardアプリケーション",
-  description: "ブログ投稿〜確認",
+  title: "YumeLog",
+  description: "夢を叶えるためのダッシュボード TOP画面",
 };
 
 export default function RootLayout({
