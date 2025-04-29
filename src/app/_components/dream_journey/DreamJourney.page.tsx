@@ -11,7 +11,7 @@ const DreamJourney = () => {
         description="Your Dream Chronicle"
         titleSx="text-3xl"
         descriptionSx="pl-4"
-        width="65%"
+        width="80%"
       >
         <Box>
           {/* 積み上げグラフ 領域 */}
