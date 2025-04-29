@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 /** 積み上げグラフ　表示用コンポーネント */
 export const StackedBarGraph = ({
@@ -22,21 +30,23 @@ export const StackedBarGraph = ({
   }
 
   return (
-    <BarChart width={900} height={400} data={data} stackOffset="expand">
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      {keys.map((key, index) => (
-        <Bar
-          key={key}
-          dataKey={key}
-          stackId="a"
-          fill={dynamicColor(index)}
-          animationDuration={300}
-        />
-      ))}
-    </BarChart>
+    <ResponsiveContainer width="100%" height={400}>
+      <BarChart data={data} stackOffset="expand">
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        {keys.map((key, index) => (
+          <Bar
+            key={key}
+            dataKey={key}
+            stackId="a"
+            fill={dynamicColor(index)}
+            animationDuration={300}
+          />
+        ))}
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 

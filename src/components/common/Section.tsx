@@ -26,16 +26,18 @@ export const Section = ({
 }: SectionProps) => {
   return (
     <Card style={{ width }}>
-      <CardHeader>
-        {title && <CardTitle className={titleSx}>{title}</CardTitle>}
-        {description && (
-          <CardDescription
-            className={`text-sm text-main ${descriptionSx ?? ""}`}
-          >
-            {description}
-          </CardDescription>
-        )}
-      </CardHeader>
+      {(title || description) && (
+        <CardHeader>
+          {title && <CardTitle className={titleSx}>{title}</CardTitle>}
+          {description && (
+            <CardDescription
+              className={`text-main text-sm ${descriptionSx ?? ""}`}
+            >
+              {description}
+            </CardDescription>
+          )}
+        </CardHeader>
+      )}
 
       <CardContent>{children}</CardContent>
     </Card>

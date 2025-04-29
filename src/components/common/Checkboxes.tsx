@@ -51,7 +51,12 @@ export function DropdownMenuCheckboxes({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Select Target</Button>
+        <Button
+          variant="outline"
+          className="text-main hover:text-main border-none shadow-none hover:bg-transparent focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+        >
+          Select Target
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>
@@ -60,6 +65,7 @@ export function DropdownMenuCheckboxes({
         {/* ALL */}
         <DropdownMenuCheckboxItem
           checked={isChecked(allOption)}
+          onSelect={(e) => e.preventDefault()}
           onCheckedChange={() => handleCheckedChange(allOption)}
         >
           Status Bar
@@ -70,6 +76,7 @@ export function DropdownMenuCheckboxes({
           <DropdownMenuCheckboxItem
             key={target}
             checked={isChecked(target)}
+            onSelect={(e) => e.preventDefault()}
             onCheckedChange={() => handleCheckedChange(target)}
           >
             {target}

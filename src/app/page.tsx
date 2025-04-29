@@ -1,4 +1,4 @@
-import DreamJourney from "@/src/app/_components/dream_journey/DreamJourney";
+import DreamJourney from "@/src/app/_components/dream_journey/DreamJourney.page";
 import DreamTitle from "@/src/app/_components/dream_title/DreamTitle";
 
 const TopPage = () => {
