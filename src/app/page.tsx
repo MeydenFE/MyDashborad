@@ -1,5 +1,4 @@
 import Dashboard from "@/src/app/_components/dashboard/Dashboard.page";
-import { Box } from "@/src/components/ui/Box";
 
 /** Topページ　画面表示 */
 const TopPage = () => {

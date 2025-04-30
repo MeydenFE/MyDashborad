@@ -1,4 +1,4 @@
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/src/components/ui/separator";
 import HeaderLogo from "@/src/app/_components/sidebar/HeaderLogo";
 import { Box } from "@/src/components/ui/Box";
 import {
