@@ -1,5 +1,5 @@
 import Image from "next/image";
-import YumeLogImage from "@/src/assets/images/YumeLog.png";
+import YumeLogImage from "@/public/images/YumeLog.png";
 
 /** 共通ヘッダー ロゴ部分 */
 
@@ -10,9 +10,9 @@ const HeaderLogo = () => {
         <Image
           src={YumeLogImage}
           alt="YumeLog"
-          height={80}
-          width={80}
-          className="object-contain"
+          height={50}
+          width={50}
+          className="object-contain h-auto w-auto"
           priority
         />
       </div>
