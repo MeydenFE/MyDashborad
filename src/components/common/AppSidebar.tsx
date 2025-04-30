@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import HeaderLogo from "@/src/app/_components/header/HeaderLogo";
+import HeaderLogo from "@/src/app/_components/sidebar/HeaderLogo";
 import { Box } from "@/src/components/ui/Box";
 import {
   Sidebar,
@@ -46,8 +46,8 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          {/* タイトル表示領域 */}
-          <Box className="flex items-center justify-between px-2 py-2">
+          {/* タイトルロゴ　表示領域 */}
+          <Box className="mt-2 flex items-center justify-between px-2 py-3">
             <SidebarGroupLabel className="flex flex-1 justify-center text-center">
               <HeaderLogo />
             </SidebarGroupLabel>

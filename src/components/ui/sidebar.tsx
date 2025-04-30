@@ -264,7 +264,7 @@ function SidebarTrigger({
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
-      variant="ghost"
+      variant="lightBlue"
       size="default"
       className={cn("w-full items-center justify-start", className)}
       onClick={(event) => {
@@ -481,6 +481,7 @@ const sidebarMenuButtonVariants = cva(
         default: "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
         outline:
           "bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]",
+        lightBlue: "hover:bg-sky-100 transition-colors duration-200",
       },
       size: {
         default: "h-8 text-sm",
@@ -498,7 +499,7 @@ const sidebarMenuButtonVariants = cva(
 function SidebarMenuButton({
   asChild = false,
   isActive = false,
-  variant = "default",
+  variant = "lightBlue",
   size = "default",
   tooltip,
   className,
