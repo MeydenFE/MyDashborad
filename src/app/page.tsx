@@ -4,8 +4,8 @@ import DreamTitle from "@/src/app/_components/dream_title/DreamTitle";
 const TopPage = () => {
   return (
     <main>
-      <DreamTitle />
-      <DreamJourney />
+      {/* <DreamTitle />
+      <DreamJourney /> */}
     </main>
   );
 };
