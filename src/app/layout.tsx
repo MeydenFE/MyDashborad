@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Header from "@/src/app/_components/header/Header";
+import Header from "@/src/app/_components/header/Header.page";
 import { SidebarProvider } from "@/src/components/ui/sidebar";
 import { AppSidebar } from "@/src/components/common/AppSidebar";
 import { Box } from "@/src/components/ui/Box";
