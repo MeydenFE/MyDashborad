@@ -1,3 +1,4 @@
+import DashboardOverdueTickets from "@/src/app/_components/dashboard/components/DashboardOverdueTickets.component";
 import DashboardWishlist from "@/src/app/_components/dashboard/components/DashboardWishList.component";
 import { Box } from "@/src/components/ui/Box";
 
@@ -5,10 +6,15 @@ import { Box } from "@/src/components/ui/Box";
 const Dashboard = () => {
   return (
     <Box className="flex-1 p-6">
-      {/* Today's Wishlist　表示領域 */}
-      {/* TODO: 一旦仮で50%指定 */}
-      <Box className="w-1/2">
-        <DashboardWishlist />
+      <Box className="flex flex-col md:flex-row">
+        {/* Today's Tickets　表示領域 */}
+        <Box className="m-4 w-full md:w-1/2 2xl:w-1/3">
+          <DashboardWishlist />
+        </Box>
+        {/* Overdue Tickets　表示領域 */}
+        <Box className="m-4 w-full md:w-1/2 2xl:w-1/3">
+          <DashboardOverdueTickets />
+        </Box>
       </Box>
     </Box>
   );
