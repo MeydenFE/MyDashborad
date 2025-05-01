@@ -5,7 +5,7 @@ import { Box } from "@/src/components/ui/Box";
 import { Checkbox } from "@/src/components/ui/checkbox";
 import { useState } from "react";
 
-/** Today's Wishlist 画面表示用 コンポーネント */
+/** 今日のチケット 画面表示用 コンポーネント */
 const DashboardWishList = () => {
   // TODO: 完了状態の定義を持たせておく。 終了チケットの判定
   const items = [
@@ -31,7 +31,7 @@ const DashboardWishList = () => {
 
   return (
     <Section
-      title="Today’s Tickets"
+      title="進行中のチケット"
       titleSx="text-gray-800"
       bgColor="bg-blue-50"
     >
