@@ -13,6 +13,7 @@ type SectionProps = {
   titleSx?: string;
   descriptionSx?: string;
   width?: string;
+  bgColor?: string;
 };
 
 /** セクションごとにUIを作成する汎用コンポーネント */
@@ -23,9 +24,10 @@ export const Section = ({
   titleSx,
   descriptionSx,
   width = "100%",
+  bgColor = "bg-white",
 }: SectionProps) => {
   return (
-    <Card style={{ width }}>
+    <Card style={{ width }} className={bgColor}>
       {(title || description) && (
         <CardHeader>
           {title && <CardTitle className={titleSx}>{title}</CardTitle>}
