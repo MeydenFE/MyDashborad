@@ -22,8 +22,8 @@ const DashboardOverdueTickets = () => {
   };
 
   return (
-    <Section title="Overdue Tickets" bgColor="bg-pink-50">
-      <ul className="max-h-64 space-y-4 overflow-y-auto pr-3 pl-2">
+    <Section title="やり残しチケット" bgColor="bg-pink-50">
+      <ul className="max-h-64 space-y-2 overflow-y-auto pr-3 pl-2">
         {overdueItems.map((item) => {
           const isChecked = checkedItems.includes(item.id);
           return (
