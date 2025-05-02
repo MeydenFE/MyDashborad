@@ -13,12 +13,13 @@ import {
   SidebarTrigger,
 } from "@/src/components/ui/sidebar";
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import Link from "next/link";
 
 export function AppSidebar() {
   const items = [
     {
       title: "Home",
-      url: "#",
+      url: "/dashboard",
       icon: Home,
     },
     {
@@ -66,10 +67,10 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

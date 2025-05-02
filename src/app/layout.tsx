@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Header from "@/src/app/_components/header/Header.page";
 import { SidebarProvider } from "@/src/components/ui/sidebar";
 import { AppSidebar } from "@/src/components/common/AppSidebar";
-import { Box } from "@/src/components/ui/Box";
+import SessionProviderWrapper from "@/src/app/providers/SessionProviderWrapper";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -28,14 +27,12 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} flex min-h-screen flex-col antialiased`}
       >
-        <SidebarProvider>
-          <AppSidebar />
-
-          <Box className="flex flex-1 flex-col bg-slate-50">
-            <Header />
+        <SessionProviderWrapper>
+          <SidebarProvider>
+            <AppSidebar />
             {children}
-          </Box>
-        </SidebarProvider>
+          </SidebarProvider>
+        </SessionProviderWrapper>
       </body>
     </html>
   );
