@@ -4,6 +4,8 @@ import ".././globals.css";
 import { SidebarProvider } from "@/src/components/ui/sidebar";
 import { AppSidebar } from "@/src/components/common/AppSidebar";
 import SessionProviderWrapper from "@/src/app/providers/SessionProviderWrapper";
+import { Box } from "@/src/components/ui/Box";
+import Header from "@/src/app/(auth)/_components/header/Header.page";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -30,7 +32,10 @@ export default function RootLayout({
         <SessionProviderWrapper>
           <SidebarProvider>
             <AppSidebar />
-            {children}
+            <Box className="flex flex-1 flex-col bg-slate-50">
+              <Header />
+              {children}
+            </Box>
           </SidebarProvider>
         </SessionProviderWrapper>
       </body>
