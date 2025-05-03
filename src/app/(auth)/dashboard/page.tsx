@@ -1,4 +1,4 @@
-import Dashboard from "@/src/app/dashboard/_components/dashboard/Dashboard.page";
+import Dashboard from "@/src/app/(auth)/dashboard/_components/dashboard/Dashboard.page";
 
 /** Topページ　画面表示 */
 const TopPage = () => {

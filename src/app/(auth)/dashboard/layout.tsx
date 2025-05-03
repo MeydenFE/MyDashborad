@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Header from "@/src/app/dashboard/_components/header/Header.page";
+import Header from "@/src/app/(auth)/dashboard/_components/header/Header.page";
 import { Box } from "@/src/components/ui/Box";
 
 export const metadata: Metadata = {

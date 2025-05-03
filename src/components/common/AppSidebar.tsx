@@ -19,12 +19,12 @@ export function AppSidebar() {
   const items = [
     {
       title: "Home",
-      url: "/dashboard",
+      url: "/landing",
       icon: Home,
     },
     {
       title: "Inbox",
-      url: "#",
+      url: "dashboard",
       icon: Inbox,
     },
     {

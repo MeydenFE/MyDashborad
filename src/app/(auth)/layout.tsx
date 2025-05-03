@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import "./globals.css";
+import ".././globals.css";
 import { SidebarProvider } from "@/src/components/ui/sidebar";
 import { AppSidebar } from "@/src/components/common/AppSidebar";
 import SessionProviderWrapper from "@/src/app/providers/SessionProviderWrapper";

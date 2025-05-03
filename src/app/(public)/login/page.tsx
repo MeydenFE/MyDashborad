@@ -13,6 +13,7 @@ import {
 } from "@/src/components/ui/card";
 import { Box } from "@/src/components/ui/Box";
 import { z } from "zod";
+import Link from "next/link";
 
 /** ログインページ　画面表示用　コンポーネント */
 const LoginPage = () => {
@@ -70,58 +71,74 @@ const LoginPage = () => {
   レンダリング - Rendering
 ═══════════════════════════════════════*/
   return (
-    <Box className="flex min-h-screen w-full items-center justify-center">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle className="text-center text-xl">ログイン</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {error && <p className="text-sm text-red-500">{error}</p>}
+    <main className="flex flex-1">
+      <Box className="flex min-h-screen w-full items-center justify-center">
+        <Card className="w-full max-w-md">
+          <CardHeader>
+            <CardTitle className="text-center text-xl">ログイン</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {error && <p className="text-sm text-red-500">{error}</p>}
 
-          {/* メールアドレス表示　領域 */}
-          <Box className="space-y-1">
-            <Input
-              type="email"
-              placeholder="メールアドレス"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {fieldErrors.email && (
-              <span className="text-xs text-red-500">{fieldErrors.email}</span>
-            )}
-          </Box>
+            {/* メールアドレス表示　領域 */}
+            <Box className="space-y-1">
+              <Input
+                type="email"
+                placeholder="メールアドレス"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {fieldErrors.email && (
+                <span className="text-xs text-red-500">
+                  {fieldErrors.email}
+                </span>
+              )}
+            </Box>
 
-          {/* パスワード表示　領域 */}
-          <Box className="space-y-1">
-            <Input
-              type="password"
-              placeholder="パスワード"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {fieldErrors.password && (
-              <span className="text-xs text-red-500">
-                {fieldErrors.password}
-              </span>
-            )}
-          </Box>
+            {/* パスワード表示　領域 */}
+            <Box className="space-y-1">
+              <Input
+                type="password"
+                placeholder="パスワード"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {fieldErrors.password && (
+                <span className="text-xs text-red-500">
+                  {fieldErrors.password}
+                </span>
+              )}
+            </Box>
 
-          <Button className="w-full" onClick={handleLogin}>
-            メールでログイン
-          </Button>
+            <Button className="w-full" onClick={handleLogin}>
+              メールでログイン
+            </Button>
 
-          <Box className="text-center text-sm text-gray-500">または</Box>
+            <Box className="text-center text-sm text-gray-500">または</Box>
 
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-          >
-            Googleでログイン
-          </Button>
-        </CardContent>
-      </Card>
-    </Box>
+            {/* Googleログイン　領域 */}
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+            >
+              Googleでログイン
+            </Button>
+
+            {/* 新規登録動線　領域 */}
+            <Box className="text-center text-sm text-gray-500">
+              アカウントをお持ちでない方は{" "}
+              <Link
+                href="/register"
+                className="text-main font-medium hover:underline"
+              >
+                新規登録
+              </Link>
+            </Box>
+          </CardContent>
+        </Card>
+      </Box>
+    </main>
   );
 };
 
