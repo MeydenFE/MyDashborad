@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useActionState, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { signIn } from "next-auth/react";
@@ -15,7 +15,6 @@ import {
 import { Box } from "@/src/components/ui/Box";
 import Link from "next/link";
 import { registerUser } from "@/src/app/(public)/register/action";
-import { useFormState } from "react-dom";
 
 /** ユーザー登録ページ　画面表示用　コンポーネント */
 const RegisterPage = () => {
@@ -33,7 +32,7 @@ const RegisterPage = () => {
   /*═══════════════════════════════════════
   状態管理 - State Management
 ═══════════════════════════════════════*/
-  const [state, formAction] = useFormState(registerUser, { error: null });
+  const [state, formAction] = useActionState(registerUser, { error: null });
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -69,7 +68,7 @@ const RegisterPage = () => {
   レンダリング - Rendering
 ═══════════════════════════════════════*/
   return (
-    <Box className="flex min-h-screen w-full items-center justify-center">
+    <Box className="flex min-h-[60vh] flex-col items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-center text-xl">新規登録</CardTitle>

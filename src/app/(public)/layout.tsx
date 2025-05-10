@@ -27,7 +27,7 @@ export default function RootLayout({
         className={`${nunito.variable} flex min-h-screen flex-col bg-slate-50 antialiased`}
       >
         <PublicHeader />
-        {children}
+        <main className="flex-grow">{children}</main>
         <PublicFooter />
       </body>
     </html>
