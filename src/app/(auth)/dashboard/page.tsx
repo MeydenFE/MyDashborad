@@ -1,5 +1,6 @@
 import Dashboard from "@/src/app/(auth)/dashboard/_components/dashboard/Dashboard.page";
 import { authOptions } from "@/src/lib/auth";
+import { prisma } from "@/src/lib/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
@@ -8,11 +9,15 @@ const TopPage = async () => {
   /*═══════════════════════════════════════
     Detabaseからユーザー情報を取得 - RSC
   ═══════════════════════════════════════*/
+
   const session = await getServerSession(authOptions);
 
   // セットアップが済んでいない場合は、セットアップページへレンダリング
-  if (session?.user.setupStep !== "complete") {
-    redirect("setup");
+  const user = await prisma.user.findUnique({
+    where: { id: session?.user.id },
+  });
+  if (user?.setupStep !== "complete") {
+    redirect("/setup");
   }
 
   return (
