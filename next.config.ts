@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
         hostname: "**.googleusercontent.com",
       },
     ],
-    domains: ["picsum.photos"],
+    domains: ["picsum.photos", "images.unsplash.com"],
   },
 };
 

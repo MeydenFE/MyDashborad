@@ -1,7 +1,20 @@
 import Dashboard from "@/src/app/(auth)/dashboard/_components/dashboard/Dashboard.page";
+import { authOptions } from "@/src/lib/auth";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-/** Topページ　画面表示 */
-const TopPage = () => {
+/** Dashboard画面　TOPページ　画面表示 */
+const TopPage = async () => {
+  /*═══════════════════════════════════════
+    Detabaseからユーザー情報を取得 - RSC
+  ═══════════════════════════════════════*/
+  const session = await getServerSession(authOptions);
+
+  // セットアップが済んでいない場合は、セットアップページへレンダリング
+  if (session?.user.setupStep !== "complete") {
+    redirect("setup");
+  }
+
   return (
     <main className="flex flex-1">
       <Dashboard />

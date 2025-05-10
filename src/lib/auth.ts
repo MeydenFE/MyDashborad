@@ -107,6 +107,7 @@ export const authOptions: AuthOptions = {
       if (user) {
         token.id = user.id;
         token.email = user.email;
+        token.setupStep = user.setupStep;
       }
       return token;
     },
@@ -114,6 +115,7 @@ export const authOptions: AuthOptions = {
       if (session.user && token) {
         session.user.id = token.id as string;
         session.user.email = token.email as string;
+        session.user.setupStep = token.setupStep as string;
       }
       return session;
     },

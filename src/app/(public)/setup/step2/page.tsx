@@ -2,10 +2,10 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/src/lib/auth";
 import { prisma } from "@/src/lib/prisma";
-import SetupStep1 from "@/src/app/(public)/setup/step1/SetupStep1";
+import SetupStep2 from "@/src/app/(public)/setup/step2/SetupStep2";
 
-/** セットアップページ 1/4設定画面TOP */
-export default async function Step1Page() {
+/** セットアップページ 2/4設定画面TOP */
+export default async function Step2Page() {
   /*═══════════════════════════════════════
   Detabaseからユーザー情報を取得 - RSC
 ═══════════════════════════════════════*/
@@ -22,17 +22,17 @@ export default async function Step1Page() {
     select: {
       dream: {
         select: {
-          title: true,
+          targetDate: true,
         },
       },
     },
   });
 
-  const dreamTitle = userWithDream?.dream?.title ?? null;
+  const initialDate = userWithDream?.dream?.targetDate ?? null;
 
   return (
     <>
-      <SetupStep1 initialDream={dreamTitle} />
+      <SetupStep2 initialDate={initialDate} />
     </>
   );
 }

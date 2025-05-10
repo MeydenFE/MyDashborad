@@ -6,7 +6,6 @@ import { PanelLeftOpen } from "lucide-react";
 
 /** 共通ヘッダー部分 サイドバー表示用ボタン　コンポーネント */
 const HeaderOpenSidebarButton = () => {
-  console.log("navigation barです");
   const { open, setOpen } = useSidebar();
 
   return (
