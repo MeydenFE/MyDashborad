@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 type BoxProps = React.HTMLAttributes<HTMLDivElement>;
 

@@ -1,7 +1,7 @@
-import HeaderNavigationbar from "@/src/app/_components/header/components/HeaderNavigationbar.component";
-import HeaderOpenSidebarButton from "@/src/app/_components/header/components/HeaderOpenSidebarButton.component";
-import HeaderTitle from "@/src/app/_components/header/components/HeaderTitle.component";
-import HeaderUserIcon from "@/src/app/_components/header/components/HeaderUserIcon.component.";
+import HeaderNavigationbar from "@/src/app/(auth)/dashboard/_components/header/components/HeaderNavigationbar.component";
+import HeaderOpenSidebarButton from "@/src/app/(auth)/dashboard/_components/header/components/HeaderOpenSidebarButton.component";
+import HeaderTitle from "@/src/app/(auth)/dashboard/_components/header/components/HeaderTitle.component";
+import HeaderUserIcon from "@/src/app/(auth)/dashboard/_components/header/components/HeaderUserIcon.component.";
 import { Box } from "@/src/components/ui/Box";
 
 /** 共通ヘッダー部分 画面表示TOPコンポーネント */

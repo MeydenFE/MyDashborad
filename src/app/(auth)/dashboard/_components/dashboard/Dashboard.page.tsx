@@ -1,7 +1,7 @@
-import DashboardOverdueTickets from "@/src/app/_components/dashboard/components/DashboardOverdueTickets.component";
-import DashboardProgressChart from "@/src/app/_components/dashboard/components/DashboardProgressChart.component";
-import DashboardProjectList from "@/src/app/_components/dashboard/components/DashboardProjectList.component";
-import DashboardWishlist from "@/src/app/_components/dashboard/components/DashboardWishList.component";
+import DashboardOverdueTickets from "@/src/app/(auth)/dashboard/_components/dashboard/components/DashboardOverdueTickets.component";
+import DashboardProgressChart from "@/src/app/(auth)/dashboard/_components/dashboard/components/DashboardProgressChart.component";
+import DashboardProjectList from "@/src/app/(auth)/dashboard/_components/dashboard/components/DashboardProjectList.component";
+import DashboardWishlist from "@/src/app/(auth)/dashboard/_components/dashboard/components/DashboardWishList.component";
 import { Box } from "@/src/components/ui/Box";
 
 /** ダッシュボード 画面表示TOPコンポーネント */
