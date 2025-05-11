@@ -3,9 +3,16 @@ import HeaderOpenSidebarButton from "@/src/app/(auth)/_components/header/compone
 import HeaderTitle from "@/src/app/(auth)/_components/header/components/HeaderTitle.component";
 import HeaderUserIcon from "@/src/app/(auth)/_components/header/components/HeaderUserIcon.component.";
 import { Box } from "@/src/components/ui/Box";
+import { authOptions } from "@/src/lib/auth";
+import { getServerSession } from "next-auth";
 
 /** 共通ヘッダー部分 画面表示TOPコンポーネント */
-const Header = () => {
+const Header = async () => {
+  /*═══════════════════════════════════════
+    session情報を取得
+  ═══════════════════════════════════════*/
+  const session = await getServerSession(authOptions);
+
   return (
     <>
       <header className="flex items-center bg-white px-4">
@@ -22,7 +29,7 @@ const Header = () => {
             </Box>
 
             {/* ユーザーアイコン　表示領域 */}
-            <HeaderUserIcon />
+            <HeaderUserIcon userImage={session?.user.image} />
           </Box>
 
           {/* ナビゲーションバー　表示領域 */}
