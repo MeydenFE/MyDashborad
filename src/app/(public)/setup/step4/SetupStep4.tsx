@@ -115,6 +115,7 @@ export default function SetupStep4({ initialProjects, unsplashImages }: Props) {
 
     startTransition(async () => {
       await updateProjects(projects, nextStep);
+
       router.push("/dashboard");
     });
   };
@@ -129,6 +130,14 @@ export default function SetupStep4({ initialProjects, unsplashImages }: Props) {
         <h1 className="text-2xl font-bold">プロジェクトを設定</h1>
         <p className="text-gray-600">
           夢を実現するためのプロジェクトを追加しましょう。
+        </p>
+
+        <p className="mt-2 text-sm text-gray-500">
+          例：
+          <span className="text-gray-600">
+            世界一周旅行の場合 -
+            語学の向上、貯金目標の達成、訪問国のリサーチなど
+          </span>
         </p>
 
         {projects.map((project, index) => (

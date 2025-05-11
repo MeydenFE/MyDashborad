@@ -75,10 +75,9 @@ export const ProjectCard = ({
         </Box>
 
         {/* カバー画像エリア */}
-        <div className="mt-4 space-y-2">
-          {selectedImage ? (
-            <>
-              <p className="text-sm text-gray-500">カバー画像を変更</p>
+        {selectedImage ? (
+          <>
+            <Box className="mt-4 space-y-2">
               <Image
                 src={selectedImage}
                 alt="選択された画像"
@@ -86,20 +85,27 @@ export const ProjectCard = ({
                 height={200}
                 className="rounded border"
               />
-            </>
-          ) : (
+              <Button
+                variant="outline"
+                onClick={() => setIsImageSelectorOpen(true)}
+              >
+                カバー画像を変更
+              </Button>
+            </Box>
+          </>
+        ) : (
+          <Box className="mt-4 space-y-2">
             <p className="text-sm text-gray-500">
               カバー画像が選択されていません
             </p>
-          )}
-
-          <Button
-            variant="outline"
-            onClick={() => setIsImageSelectorOpen(true)}
-          >
-            Unsplashから画像を選択
-          </Button>
-        </div>
+            <Button
+              variant="outline"
+              onClick={() => setIsImageSelectorOpen(true)}
+            >
+              Unsplashから画像を選択
+            </Button>
+          </Box>
+        )}
 
         {/* Unsplash モーダル */}
         {isImageSelectorOpen && (
