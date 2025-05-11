@@ -12,7 +12,6 @@ const HeaderUserIcon = () => {
         width={70}
         height={70}
         className="rounded-full object-contain"
-        priority
       />
     </>
   );
