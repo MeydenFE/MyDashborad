@@ -19,13 +19,15 @@ export const tabsItems: TabsItem[] = [
     value: "C",
     content: "Ticket",
     icon: <Ticket className="h-4 w-4" />,
-    href: "/ticket",
+    // href: "/ticket",
+    href: "/dashboard",
   },
   {
     value: "D",
     content: "Calendar",
     icon: <Calendar className="h-4 w-4" />,
-    href: "/calendar",
+    // href: "/calendar",
+    href: "/dashboard",
   },
 ];
 

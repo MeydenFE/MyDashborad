@@ -39,7 +39,7 @@ const Header = async () => {
         </Box>
       </header>
 
-      <Box className="h-0.5 bg-[color:var(--color-main)]" />
+      <Box className="mt-1 h-0.5 bg-[color:var(--color-main)]" />
     </>
   );
 };
