@@ -11,14 +11,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/src/lib/utils";
 
 type DropdownCheckboxProps = {
+  /** ドロップダウンリスト */
   targets: string[];
+  /** ボタン表示テキスト */
+  buttonText: string;
+  /** イベント処理 */
   onChange?: (selected: string[]) => void;
 };
 
-export function DropdownMenuCheckboxes({
+export function DropdownMenuCheckbox({
   targets,
+  buttonText,
   onChange,
 }: DropdownCheckboxProps) {
   const allOption = "All";
@@ -52,10 +59,17 @@ export function DropdownMenuCheckboxes({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="outline"
-          className="text-main hover:text-main border-none shadow-none hover:bg-transparent focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+          variant="ghost"
+          className={cn(
+            "text-main flex items-center gap-1 px-2 py-1 text-sm",
+            "rounded-md border border-gray-400 bg-inherit",
+            "hover:bg-sky-100",
+            "hover:text-main",
+            "focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0",
+          )}
         >
-          Select Target
+          {buttonText}
+          <ChevronDown className="text-main h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">

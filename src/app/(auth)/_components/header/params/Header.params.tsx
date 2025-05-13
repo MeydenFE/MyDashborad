@@ -31,4 +31,4 @@ export const tabsItems: TabsItem[] = [
   },
 ];
 
-export const defaultValue = "A";
+export const defaultValue = () => {};
